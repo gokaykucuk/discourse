@@ -38,9 +38,6 @@ RUN bundle install --without development test
 # Copy the application code
 COPY . .
 
-# Precompile assets
-RUN bundle exec rake assets:precompile
-
 # Expose the port the app runs on
 EXPOSE 3000
 
