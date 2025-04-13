@@ -22,7 +22,9 @@ RUN apt-get update -qq && apt-get install -y \
     gifsicle \
     cmake \
     liblz4-dev \
-    libmaxminddb-dev
+    libmaxminddb-dev \
+    # Added for psych gem
+    libyaml-dev
 
 # Set the working directory
 WORKDIR /app
