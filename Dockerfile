@@ -10,7 +10,7 @@ RUN apt-get update -qq && apt-get install -y \
     build-essential \
     libpq-dev \
     nodejs \
-    yarn \
+    npm \
     imagemagick \
     git \
     curl \
@@ -32,8 +32,12 @@ WORKDIR /app
 # Copy the Gemfile and Gemfile.lock
 COPY Gemfile Gemfile.lock ./
 
+# Install pnpm
+RUN npm install -g pnpm
+
 # Install gems
-RUN bundle install --without development test
+RUN bundle config set without 'development test'
+RUN bundle install
 
 # Copy the application code
 COPY . .
