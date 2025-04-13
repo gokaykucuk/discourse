@@ -42,4 +42,4 @@ COPY . .
 EXPOSE 3000
 
 # Start the Rails server
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+CMD ["bundle", "exec", "rails", "s"]
