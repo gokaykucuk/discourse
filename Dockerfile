@@ -40,6 +40,4 @@ COPY . .
 
 # Expose the port the app runs on
 EXPOSE 3000
-
-# Start the Rails server
-CMD ["bundle", "exec", "rails", "s"]
+EXPOSE 4200
